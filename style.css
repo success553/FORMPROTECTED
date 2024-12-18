@@ -1,0 +1,218 @@
+body{
+     background-color: rgb(11, 8, 54); 
+    background-image: url("assets/bg3.jpg");
+     /* backdrop-filter: blur(1px); */
+     background-size: cover;
+    /* margin-left: 20em;
+    margin-right: 20em; */
+}
+/* form{
+    background-color: aliceblue;
+    min-height: 15em;
+    padding: 2em;
+    min-width: 3em;
+    display: flex;
+    flex-direction: column;
+}
+form input{
+    height: 2em;
+} */
+
+*{
+     box-sizing:border-box;
+     margin: 0;
+     padding: 0;   
+     font-weight: bold;
+     font-family: "Poppins",sans-serif;
+     color: white;
+}
+
+ .label{
+    display: block;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    color: white;
+    text-align: center;
+ }
+
+form{
+    position: relative;
+    top: -70%;
+    left: 35%;
+    max-width: 600px;
+    width: 100%;
+    padding:50px 20px;
+    margin-top:5% ;
+    border-radius: 10px;
+    background-color: rgba(90, 166, 213, 0.427);
+   
+    /* box-shadow: 0 0 5px rgba(0, 2, 6, 0.883); */
+    /* z-index:  -5; */
+    align-content: center;
+
+    
+}
+
+ .form-input{
+    width: inherit;
+    height: 2.5em;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+  
+    border-radius: 1px;
+    margin-bottom: 15px;
+    font-family: "Poppins", sans-serif;
+     font-weight: 600;
+    font-size: large;
+    
+}
+.form-input:hover{
+    border-bottom: 3px solid rgb(255,255, 255);
+}
+.form-input:focus,input:not(:placeholder-shown){
+    background: transparent;
+    outline-color: transparent;
+    outline-width: 0px;
+    
+    
+}
+.group-input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+.group-input label{
+    float: left;
+}
+
+form button{
+    background-color: #04203c;
+    font-family: "Poppins", sans-serif;
+    font-size: larger;
+    width: 100%;
+    height: px;
+    color: white;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #09355ca4;
+}
+.loginlinks{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+ .loginlinks a{
+    color: rgb(255,255, 255);
+    text-decoration:none;
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+ }
+
+ .loginlinks .spacer{
+    margin: 0 82px;
+ }
+ 
+  .leaf{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    filter: blur(5px);
+    background-color:rgba(74, 75, 80, 0.38);
+    border: 1px solid rgb(248, 248, 248);
+    border-radius: 50%;
+    animation: falling 8s ease-in-out infinite;
+
+  }
+  @keyframes falling{
+    0%{
+        transform: translateX(-10%);
+    }
+    90%{
+        transform: translateY(100%);
+    }
+  }
+  .leaf:nth-child(1){
+    left: 5%;
+    top: -5%;
+    animation-delay: 0.5s;
+    background-color:rgba(21, 182, 226, 0.66);
+    border: 1px solid rgb(231, 233, 234);
+  }
+  .leaf:nth-child(2){
+    left: 25%;
+    top: -10%;
+    animation-delay: 2s;
+    background-color:rgba(190, 216, 24, 0.35);
+    border: 1px solid rgb(251, 252, 247);
+  }
+  .leaf:nth-child(3){
+    left: 45%;
+    top: -15%;
+    animation-delay: 1.5s;
+    background-color:rgba(1, 19, 20, 0.42);
+    border: 1px solid rgb(10, 157, 207);
+  }
+  .leaf:nth-child(4){
+    left: 65%;
+    top: -10%;
+    animation-delay: 1s;
+    background-color:rgba(4, 13, 85, 0.51);
+    border: 1px solid rgb(241, 241, 235);
+  }
+  .leaf:nth-child(5){
+    left: 85%;
+    top: -25%;
+    animation-delay: 2.5s;
+  }
+  .leaf:nth-child(6){
+    left: 95%;
+    top: -15%;
+    bottom: 20%;
+    animation-delay: 2.5s;
+  }
+  .leaf:nth-child(7){
+    left: 55%;
+    top: -15%;
+    animation-delay: 1.5s;
+    background-color:rgba(20, 169, 180, 0.59);
+    border: 1px solid rgb(174, 207, 10);
+  }
+  .leaf:nth-child(8){
+    left: 20%;
+    top: -15%;
+    animation-delay: 1.0s;
+    background-color:rgba(10, 147, 147, 0.59);
+    border: 1px solid rgb(0, 3, 4);
+  }
+  @media screen and(max-width:830px) {
+    .login-box {
+        max-width: 300px;
+    }
+    .body{
+        background-repeat: no-repeat;
+    }
+    .leaf-container{
+        display: none;
+    }
+    .form{
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+        margin-top:0 ;
+        text-align: center;
+        
+    }
+    .loginlinks{
+        flex-direction: column;
+    }
+    
+  }
