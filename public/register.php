@@ -8,12 +8,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/style.css" rel="stylesheet" type="text/css">
     <title>Register page</title>
 </head>
 <body>
 
-   <div class="container">
+<div class="container-fluid">
+  
+<div class="container">
    <div class="leaf"></div>
            <div class="leaf"></div>
             <div class="leaf"></div>
@@ -28,13 +30,13 @@
            
    </div>
    
-    <form action="process/register_process.php"method="post">
+    <form action="../process/register_process.php"method="post">
         
     <h1 class="label">Register page</h1>
      <?php
        if(isset($_SESSION["ERROR_MSG_registerform"])){
      ?>
-      <P><?php echo $_SESSION["ERROR_MSG_registerform"]?></p>
+      <p class="eror-alert error-type "><?php echo $_SESSION["ERROR_MSG_registerform"]?></p>
       <?php unset($_SESSION["ERROR_MSG_registerform"])?>
      <?php
         }
@@ -42,10 +44,6 @@
         <div class="group-input">
         <label for="fullname">fullname:</label>
         <input type="text" name="fullname"  class="form-input">
-        </div>
-        <div class="group-input">
-        <label for="username">username:</label>
-        <input type="text" name="username" class="form-input">
         </div>
         <div class="group-input">
         <label for="email">email:</label>
@@ -70,6 +68,7 @@
         </div>
     </form>
    
+</div>
    
     
 </body>

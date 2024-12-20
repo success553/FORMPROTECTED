@@ -7,17 +7,20 @@
      if(isset($_POST["loginBtn"])){
          $email = sanitizer($_POST["email"]);
          $password = sanitizer($_POST["password"]);
+        
         if(empty($email)||empty($password)){
           $_SESSION["ERROR_MSG_loginform"] = "All fields ar required";
-         header("location:../login.php");
+         header("location:../public/login.php");
         
         }else{
-            $loginUser = new User();
-      $loginNewUser = $loginUser->loginUsers($email,$password);
         
-          }
+            $loginUser = new User();
+            $loginNewUser = $loginUser->loginUsers($email,$password);
+
+             }
      }else{
-        header("location:../login.php");
+         $_SESSION["ERROR_MSG_loginform"] = "request not authorized";
+        header("location:../public/login.php");
      }
   }else {
     header("location:../https://www.google.co.in/");

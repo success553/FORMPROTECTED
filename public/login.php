@@ -6,11 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/style.css" rel="stylesheet" type="text/css">
 
     <title>Login page</title>
 </head>
 <body>
+   <div class="container-fluid">
    <div class="circle-container">
             <div class="leaf"></div>
            <div class="leaf"></div>
@@ -20,7 +21,7 @@
            <div class="leaf"></div>
             <div class="leaf"></div>
    </div>
-    <form action="process/login_process.php" method="post">
+    <form action="../process/login_process.php" method="post">
       <h1 class="label">Login page</h1>
       <?php
         if(isset($_SESSION["ERROR_MSG_loginform"])){
@@ -49,6 +50,6 @@
         <a href="register.php">Don't have an account register</a>
     </div>
     </form>
-    
+      </div>
 </body>
 </html>
