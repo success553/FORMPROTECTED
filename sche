@@ -1,0 +1,18 @@
+<?php
+
+class ColorPicker {
+    private $colors;
+
+    public function __construct() {
+        $this->colors = ["red", "blue", "green", "yellow", "orange", "purple", "pink"];
+    }
+
+    public function getRandomColor() {
+        return $this->colors[array_rand($this->colors)];
+    }
+}
+
+// Usage
+$colorPicker = new ColorPicker();
+echo "Random Color: " . $colorPicker->getRandomColor();
+?>

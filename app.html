@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #6c5ce7;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin-bottom: 10px;
+        }
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+        .todo-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .todo-list li button {
+            background: #ff7675;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calendar {
+            display: flex;
+            justify-content: center;
+        }
+        .diary {
+            display: flex;
+            flex-direction: column;
+        }
+        .diary textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daily Planner</h1>
+    </header>
+
+    <div class="container">
+        <!-- To-Do List Section -->
+        <section class="section" id="todo-section">
+            <h2>Plan Your Day</h2>
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Add a new task..." required>
+                <button type="submit">Add Task</button>
+            </form>
+            <ul class="todo-list" id="todo-list"></ul>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="section" id="calendar-section">
+            <h2>Calendar</h2>
+            <div class="calendar">
+                <iframe src="https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23ffffff&src=en.usa%23holiday%40group.v.calendar.google.com&color=%23AB8B00&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </section>
+
+        <!-- Diary Section -->
+        <section class="section" id="diary-section">
+            <h2>Memories & Diary</h2>
+            <form id="diary-form">
+                <textarea id="diary-entry" placeholder="Write your thoughts here..."></textarea>
+                <button type="submit">Save Entry</button>
+            </form>
+            <ul class="diary-entries" id="diary-entries"></ul>
+        </section>
+    </div>
+
+    <script>
+        // Handle To-Do List
+        const todoForm = document.getElementById('todo-form');
+        const todoList = document.getElementById('todo-list');
+
+        todoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const task = document.getElementById('todo-input').value;
+
+            const li = document.createElement('li');
+            li.innerHTML = `${task} <button onclick="this.parentElement.remove()">Remove</button>`;
+
+            todoList.appendChild(li);
+            todoForm.reset();
+        });
+
+        // Handle Diary Entries
+        const diaryForm = document.getElementById('diary-form');
+        const diaryEntries = document.getElementById('diary-entries');
+
+        diaryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const entry = document.getElementById('diary-entry').value;
+
+            const li = document.createElement('li');
+            li.textContent = entry;
+
+            diaryEntries.appendChild(li);
+            diaryForm.reset();
+        });
+    </script>
+</body>
+</html>
